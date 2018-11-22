@@ -1,17 +1,22 @@
 package com.jirina.p2pchat.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
 public class User {
+    public User() {
+    }
+
     @Id
     @GeneratedValue
     long id;
     String username;
+
+    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn (name ="message_dbID")
+    List<Message> messages;
 
     public long getId() {
         return id;

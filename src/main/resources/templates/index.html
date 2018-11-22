@@ -9,7 +9,7 @@
 <br>
 <span style="color: red" th:text="${errormessage}"></span>
 <br>
-<form action = "/" method="post">
+<form action = "/nick" method="post">
     Your username: <input type="text" name="nickname">
     <input type="Submit" value="update">
 </form>
@@ -17,6 +17,17 @@
 <ul th:text="${userApp}"></ul>
 <span th:text="${defaultMessage}"></span>
 <br>
+
+<ul th:each="message: ${messages}">
+    <div class="messageBox">
+        <h4 class="messageDetails" th:text="${actualUserName}"/>
+        <p class="messageDetails" th:text="${message.getText()}"/>
+    </div>
+</ul>
+<form action="/newMessage" method="POST">
+    <input type="text" name="newmessage" placeholder="* Enter message *" autofocus>
+    <input type="Submit" value="Send" >
+</form>
 
 
 
