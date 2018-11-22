@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>p2p chat</title>
+</head>
+<body>
+<h1>Peer to Peer Chat program</h1>
+<br>
+<span style="color: red" th:text="${errormessage}"></span>
+<br>
+<form action = "/" method="post">
+    Your username: <input type="text" name="nickname">
+    <input type="Submit" value="update">
+</form>
+<br>
+<ul th:text="${userApp}"></ul>
+<span th:text="${defaultMessage}"></span>
+<br>
+
+
+
+
+</body>
+</html>

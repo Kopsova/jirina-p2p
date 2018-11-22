@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<span style="color: red" th:text="${errormessage}"></span>
+<br>
+<h1>Enter</h1>
+<br>
+<form action = "/register" method="post">
+    Choose your name<input type="text" name="username">
+    <input type="Submit" value="Enter">
+
+</form>
+
+</body>
+</html>
